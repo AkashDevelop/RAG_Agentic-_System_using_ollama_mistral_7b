@@ -1,21 +1,28 @@
-# FedReg RAG Agentic System
+# US FedReg RAG_Agentic_System_using_ollama_mistral_7b
+ 
 
-## Project Overview
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-async%20web%20API-green)
+![Ollama](https://img.shields.io/badge/LLM-Ollama%20Qwen2.5-orange)
+![Status](https://img.shields.io/badge/Status-Demo-blue)
 
-This project implements a **User-facing Retrieval-Augmented Generation (RAG) Agentic System** for querying US Federal Register regulations and executive documents. The system uses a local LLM (via Ollama) with asynchronous tool/function calls to MySQL and vector DBs for data retrieval.
+A **user-facing Retrieval-Augmented Generation (RAG) Agentic System** that lets users query the [Federal Register](https://www.federalregister.gov/) using natural language. It uses a **local LLM (Ollama)** with tool/function calls to access **MySQL** and optional **Vector DB (Chroma)**, ensuring data is updated **daily** via a fully automated pipeline.
+
+---
+
+## 🧱 Architecture & Stack
+
+- **Backend**: `FastAPI`, `aiohttp`, `aiomysql`, async tool execution
+- **LLM**: Local Mistral:7b via **Ollama**
+- **Data Source**: [Federal Register API](https://www.federalregister.gov/developers/documentation/api/v1)
+- **Data Pipeline**: Raw JSON → Cleaned → MySQL (indexed)
+- **Frontend**: Simple `HTML + CSS + JS` (WebSocket-based chat)
+- **VectorDB (optional)**: ChromaDB for embedding-based queries
 
 ---
 
-## Architecture & Tech Stack
+![Image](https://github.com/user-attachments/assets/e5cbd9c9-892f-4bd5-ac2d-78338af1b355)
 
-- **Backend**: Python 3, FastAPI (with WebSocket chat interface)
-- **Local LLM**: Ollama (Qwen2.5 0.5b or 1b model)
-- **Data Storage**: MySQL (daily updated via data pipeline), Vector DB (Chroma, optional)
-- **Data Pipeline**: Scheduled daily download, processing, and DB load from Federal Register API
-- **Frontend**: Basic HTML/CSS/JS chat interface
-- **Async Programming**: aiohttp, aiomysql, FastAPI async endpoints for non-blocking UX
-
----
 
 ## Data Pipeline
 

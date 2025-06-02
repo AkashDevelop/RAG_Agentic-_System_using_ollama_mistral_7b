@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federal Register Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Federal Register Assistant</h1>
+            <p>Ask questions about US regulations and executive documents</p>
+        </header>
+        
+        <div id="chat-container">
+            <div id="message-history"></div>
+            
+            <div class="input-area">
+                <input type="text" id="user-input" 
+                       placeholder="Type your question...">
+                <button id="send-btn">Send</button>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Data updated daily from Federal Register API</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
